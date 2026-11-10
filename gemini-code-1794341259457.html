@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radiology Darkroom & Film Processing Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      background-color: #f3f4f6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .correct-answer {
+      background-color: #d1fae5 !important;
+      border-color: #10b981 !important;
+      color: #065f46 !important;
+      font-weight: 600;
+    }
+    .incorrect-answer {
+      background-color: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #991b1b !important;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="py-8 px-4 sm:px-6 lg:px-8">
+
+  <div class="max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="bg-indigo-900 text-white p-6 rounded-t-2xl shadow-lg border-b-4 border-indigo-500">
+      <h1 class="text-3xl font-bold text-center mb-2">Radiology Dark Room & Film Processing Exam</h1>
+      <p class="text-center text-indigo-200 text-sm">Group 4 • Instant Interactive Quiz (50 Questions)</p>
+    </div>
+
+    <!-- Live Counter -->
+    <div class="sticky top-0 z-10 bg-white p-4 shadow-md mb-6 flex justify-between items-center rounded-b-xl border border-gray-200">
+      <div class="text-gray-700 font-semibold text-sm sm:text-base">
+        Progress: <span id="answeredCount" class="text-indigo-600 font-bold">0</span> / 50
+      </div>
+      <div id="liveScore" class="text-sm sm:text-base font-bold text-indigo-900">
+        Score: <span id="correctCount" class="text-green-600">0</span> Correct
+      </div>
+    </div>
+
+    <!-- Quiz Form -->
+    <form id="quizForm" class="space-y-8">
+
+      <!-- PART 1 -->
+      <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+        <h2 class="text-xl font-bold text-indigo-800 pb-2 border-b-2 border-indigo-100 mb-6">
+          Part 1: Dark Room Basics, Location, and Design
+        </h2>
+        <div class="space-y-6">
+
+          <!-- Q1 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">1. What is the primary purpose of the dark room in the radiology department?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q1" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To reduce radiation emitted by X-ray equipment</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q1" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To process and handle X-ray films to produce a visible image away from unwanted light exposure</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q1" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To examine prosthetic joints</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q1" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To test blood and living tissues</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="c">
+            <p class="font-semibold text-gray-800 mb-3">2. Where is the dark room ideally located within the radiology department?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q2" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) At the farthest point of the department</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q2" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) At the main entrance</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q2" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) In the center of the radiology department to reduce time and effort in transferring films</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q2" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Next to the patients' waiting area</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="a">
+            <p class="font-semibold text-gray-800 mb-3">3. What are the common rectangular dimensions of the dark room?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q3" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) \(2.6 \times 2 \text{ m}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q3" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) \(5 \times 5 \text{ m}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q3" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) \(1 \times 1 \text{ m}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q3" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) \(10 \times 8 \text{ m}\)</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">4. What is the ideal temperature inside the dark room for working and storing films?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q4" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) \(35^\circ\text{C}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q4" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) \(20^\circ\text{C}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q4" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) \(10^\circ\text{C}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q4" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) \(40^\circ\text{C}\)</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">5. What is the ideal relative humidity level for darkroom work?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q5" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Between 10% and 20%</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q5" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Between 45% and 50%</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q5" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Between 80% and 90%</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q5" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) 100%</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">6. Why are the walls and ceiling of the dark room painted in a dark, matte color?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q6" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To increase light reflection</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q6" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To reduce light reflection and prevent film fogging</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q6" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To warm up the room</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q6" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To brighten the room with white light</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="a">
+            <p class="font-semibold text-gray-800 mb-3">7. What is the recommended lead thickness for the walls of the dark room if radiation shielding is needed?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q7" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) \(2\text{ mm}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q7" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) \(10\text{ mm}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q7" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) \(0.1\text{ mm}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q7" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) \(50\text{ mm}\)</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">8. Which type of doors are typically used to prevent light entry while facilitating movement into the dark room?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q8" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Transparent glass doors</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q8" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Revolving doors or Labyrinth</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q8" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Open wooden doors</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q8" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Light cloth curtains</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">9. What specifications must the dark room floor meet?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q9" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Slippery and porous</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q9" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Non-slip, easy to clean, chemical-resistant, and stain-proof</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q9" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Covered with luxury carpet</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q9" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Made of wet wood</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">10. The work areas inside the dark room are divided into:</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q10" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Cold area and warm area</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q10" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Wet area and dry area</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q10" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Open area and closed area</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p1_q10" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Imaging area and surgery area</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PART 2 -->
+      <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+        <h2 class="text-xl font-bold text-indigo-800 pb-2 border-b-2 border-indigo-100 mb-6">
+          Part 2: Safelight
+        </h2>
+        <div class="space-y-6">
+
+          <!-- Q1 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">1. What is the definition of a safelight in a radiographic dark room?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q1" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) A strong white light illuminating all corners</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q1" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) A low-intensity special light emitting wavelengths that do not affect light-sensitive materials</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q1" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) A concentrated ultraviolet light</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q1" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) A green laser light</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">2. What are the common colors of filters used for safelighting in the dark room?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q2" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) White and blue</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q2" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Red or amber</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q2" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Green and light yellow</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q2" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Opaque black</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="a">
+            <p class="font-semibold text-gray-800 mb-3">3. Which filter is suitable for use with blue-sensitive films?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q3" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Red filter</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q3" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Amber filter</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q3" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Green filter</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q3" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) White filter</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">4. Which filter is suitable for use with green-sensitive films?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q4" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Dark red filter</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q4" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Amber / orange filter</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q4" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Blue filter</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q4" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Purple filter</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">5. What is the recommended bulb wattage for a safelight to reduce fogging risk?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q5" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) 100-watt bulb</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q5" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) 15-watt bulb or less</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q5" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) 500-watt bulb</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q5" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) 60-watt bulb</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">6. What is the minimum distance allowed between a direct safelight and the working surface?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q6" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) \(0.2 \text{ m}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q6" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) \(1.2 \text{ m}\) (4 feet)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q6" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) \(5 \text{ m}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q6" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) \(10 \text{ m}\)</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">7. What is the purpose of the Coin Test in the dark room?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q7" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To evaluate water quality</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q7" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To check safelight safety and ensure no harmful light leakage</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q7" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To measure film thickness</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q7" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To test fixer performance</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">8. In the coin test, what does the visibility of a coin shadow on the film indicate?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q8" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) The safelight is completely safe and good</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q8" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) The safelight is unsafe and causes film fogging</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q8" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) The film is inherently unfit for storage</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q8" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) The developer has expired</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="a">
+            <p class="font-semibold text-gray-800 mb-3">9. What is the maximum recommended time limit for handling film under a safelight to avoid damage?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q9" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) About 5 minutes</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q9" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Two hours</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q9" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) All day long</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q9" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Only 30 seconds</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">10. What is the phenomenon resulting from excessive film exposure to improper safelight or close distance?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q10" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Complete film lightening</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q10" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Film fog (unwanted overall darkening)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q10" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Gelatin melting</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p2_q10" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Film hardening</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PART 3 -->
+      <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+        <h2 class="text-xl font-bold text-indigo-800 pb-2 border-b-2 border-indigo-100 mb-6">
+          Part 3: Radiographic Films, Components, and Storage
+        </h2>
+        <div class="space-y-6">
+
+          <!-- Q1 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">1. What is the most common active sensitive substance in the film emulsion?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q1" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Sodium chloride</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q1" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Silver bromide (AgBr)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q1" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Calcium carbonate</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q1" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Iron oxide</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">2. What is the correct sequence of layers in a standard X-ray film from outside to inside?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q2" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Base \(\leftarrow\) Adhesive layer \(\leftarrow\) Emulsion \(\leftarrow\) Protective coating</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q2" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Overcoat / protective layer \(\leftarrow\) Emulsion layer \(\leftarrow\) Adhesive layer \(\leftarrow\) Base</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q2" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Emulsion only</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q2" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Plastic base entirely</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="c">
+            <p class="font-semibold text-gray-800 mb-3">3. What material is the base of modern X-ray films made of?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q3" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Pure glass</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q3" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Old cellulose nitrate</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q3" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Polyester or cellulose triacetate</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q3" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Treated cardboard</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">4. What is the characteristic color of the X-ray film base that is easy on the eyes?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q4" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Crimson red</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q4" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Light blue tint</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q4" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Bright yellow</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q4" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Opaque black</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">5. What is the function of the adhesive layer (sub-stratum) in film construction?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q5" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To give taste and odor to the film</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q5" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To bind the emulsion layer strongly to the film base</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q5" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To wash the film with water</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q5" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To protect the film from X-rays</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">6. Which type of films are used with intensifying screens and are sensitive to light and radiation?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q6" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Non-screen films</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q6" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Screen films</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q6" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Dental films only</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q6" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Regular photography films</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="a">
+            <p class="font-semibold text-gray-800 mb-3">7. Non-screen films are characterized by:</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q7" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) A thicker sensitive layer providing very high detail (used for bone and soft tissue)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q7" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Requiring no fixing time at all</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q7" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Being sensitive only to white light</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q7" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Being extremely thin and never used medically</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">8. What are the ideal storage conditions for unexposed X-ray films?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q8" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) In a hot place exposed to sunlight</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q8" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) In a cool place (\(10\text{--}15^\circ\text{C}\)), dry, away from heat, humidity, and radiation, stored in an upright position</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q8" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Stacked horizontally on top of each other in massive quantities</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q8" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Right next to chemical tanks</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">9. What rule should be followed regarding the use of stored film boxes based on arrival time?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q9" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Last in, first out</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q9" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) First in, first out (FIFO)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q9" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Random box selection</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q9" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Using expired boxes always</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="a">
+            <p class="font-semibold text-gray-800 mb-3">10. What essential data must be provided and marked on the X-ray film after exposure and processing?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q10" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Patient's name, number, study date, type of study, and hospital or physician name</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q10" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Patient's hair color only</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q10" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Room temperature at the time of exposure</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p3_q10" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Darkroom technician's personal name</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PART 4 -->
+      <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+        <h2 class="text-xl font-bold text-indigo-800 pb-2 border-b-2 border-indigo-100 mb-6">
+          Part 4: Processing Cycle and Developer Solution
+        </h2>
+        <div class="space-y-6">
+
+          <!-- Q1 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">1. What are the basic steps involved in manual film processing in their correct order?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q1" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Fixing \(\leftarrow\) Developing \(\leftarrow\) Washing \(\leftarrow\) Drying</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q1" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Developing \(\leftarrow\) Rinsing / Stop bath \(\leftarrow\) Fixing \(\leftarrow\) Final washing \(\leftarrow\) Drying</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q1" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Drying first then developing</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q1" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Washing then fixing then developing</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">2. What is the primary role of the developer solution in the dark room?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q2" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To remove the film entirely</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q2" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To reduce exposed silver halide crystals and convert the latent image into a visible dark image</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q2" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To lighten the film and make it transparent</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q2" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To dry gelatin tissues</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">3. Which of the following are active reducing agents in the developer composition?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q3" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Sodium thiosulphate</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q3" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Hydroquinone and Phenidone / Metol</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q3" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Glacial acetic acid</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q3" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Silver chloride</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">4. In what chemical medium does the developer solution operate?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q4" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Strongly acidic medium</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q4" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Alkaline medium (Alkaline pH)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q4" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Completely neutral medium</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q4" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Oily medium</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">5. What is the consequence of prolonged film exposure to the developer solution beyond the required time?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q5" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) The film becomes completely transparent</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q5" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Film fogging occurs</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q5" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) The film disappears completely</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q5" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) The film hardens excessively</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="a">
+            <p class="font-semibold text-gray-800 mb-3">6. What is the standard recommended temperature for manual developer solution with an ideal time of 5 minutes?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q6" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) \(20^\circ\text{C}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q6" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) \(40^\circ\text{C}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q6" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) \(5^\circ\text{C}\)</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q6" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) \(37^\circ\text{C}\)</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">7. What is the purpose of agitating (shaking) the film inside the developer tank during processing?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q7" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To drop the film to the bottom of the tank</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q7" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To remove air bubbles from the film surface, prevent air bell marks, and mix the solution</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q7" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To color the film yellow</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q7" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To heat the solution chemically</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">8. What are the white spots surrounded by a black ring that appear on the film due to lack of agitation called?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q8" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Dichroic fog</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q8" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Air bell marks</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q8" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Chemical scratches</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q8" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Photographic fog</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">9. How can developer exhaustion be practically and quickly predicted?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q9" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) By remaining completely transparent like mineral water</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q9" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) By changing color from colorless to yellow and then murky brown</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q9" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) By emitting a pleasant perfume scent</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q9" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) By freezing inside the tank</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">10. What liquid or solution is added periodically to make up for loss and maintain developer level and concentration?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q10" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Ordinary tap water</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q10" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Replenisher solution</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q10" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Old fixer solution</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p4_q10" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Medical alcohol</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PART 5 -->
+      <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+        <h2 class="text-xl font-bold text-indigo-800 pb-2 border-b-2 border-indigo-100 mb-6">
+          Part 5: Fixing, Washing, Drying, and Film Artifacts
+        </h2>
+        <div class="space-y-6">
+
+          <!-- Q1 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="a">
+            <p class="font-semibold text-gray-800 mb-3">1. What is the main role of the fixer solution, specifically sodium thiosulphate?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q1" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To dissolve unexposed and unreduced silver halide crystals and convert them from milky to transparent</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q1" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To increase image blackness and show details</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q1" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To warm up the film quickly</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q1" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To dissolve the film plastic base</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">2. What is the benefit of adding an acidifier (such as acetic acid) to the fixer solution?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q2" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To increase developer alkalinity</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q2" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To neutralize residual developer on the film, stop its action immediately, and prevent dichroic fog</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q2" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To color the film red</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q2" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To increase developer reaction speed</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="a">
+            <p class="font-semibold text-gray-800 mb-3">3. What is the role of a hardening agent (such as chrome alum) in the fixer solution?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q3" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To harden the gelatin layer, reduce drying time, and minimize the risk of scratches and damage</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q3" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To soften the film and make it fluid</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q3" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To increase film sensitivity to light</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q3" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To remove silver from the film entirely</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">4. What does "Dichroic Fog" refer to on a film?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q4" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) The film appearing pure white</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q4" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) The appearance of colored spots or reflections (such as pink stain on the safelight or yellowish-green stain under light) due to developer working within fixer</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q4" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Power outage during processing</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q4" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Total cassette destruction</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="a">
+            <p class="font-semibold text-gray-800 mb-3">5. Why is final washing with clean water after fixing a critical step?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q5" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To remove any traces of fixer and excess chemicals to ensure image permanence without fading or yellowing</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q5" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To color the film with an extra dye</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q5" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To dry the film instantly</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q5" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To increase plastic base thickness</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="a">
+            <p class="font-semibold text-gray-800 mb-3">6. Which of the following are film drying methods available in the dark room?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q6" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Natural drying, chemical drying (alcohol), hot air, and roller drying</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q6" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Direct exposure to blazing sunlight in the courtyard</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q6" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Using a home microwave</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q6" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Leaving the film wet forever</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">7. What is the purpose of adding a wetting agent for a short time after washing and before hot air drying?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q7" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To increase dust adhesion</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q7" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To reduce drying time and prevent water droplets from drying on the film surface</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q7" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To dissolve the film completely</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q7" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To change the image color</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">8. What is the purpose of silver recovery processes from exhausted fixer solutions?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q8" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) To dispose of it in drainage without benefit</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q8" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) To recover valuable silver with economic value and protect the environment from pollution</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q8" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) To increase fixer acidity</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q8" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) To make new video tapes</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">9. What is the consequence of neglecting to cover chemical tanks (especially the developer) when not in use?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q9" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Freezing the solution</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q9" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Increased oxidation due to air exposure and rapid loss of solution activity</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q9" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Automatic increase in water volume</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q9" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Turning the solution into pure gold</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="question-card p-4 rounded-lg border border-gray-200 hover:border-gray-300" data-correct="b">
+            <p class="font-semibold text-gray-800 mb-3">10. Which of the following is considered an essential occupational safety rule inside the dark room when handling chemicals?</p>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q10" value="a" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">a) Working without any protective gear and tasting chemicals</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q10" value="b" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">b) Wearing gloves and protective masks, and following safety rules to prevent health hazards and toxic fumes</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q10" value="c" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">c) Working in total darkness without any ventilation</span>
+              </label>
+              <label class="flex items-center p-2 rounded border border-transparent hover:bg-gray-50 cursor-pointer transition">
+                <input type="radio" name="p5_q10" value="d" onchange="handleAnswer(this)" class="h-4 w-4 text-indigo-600">
+                <span class="ml-3 text-gray-700">d) Washing hands directly in the developer solution</span>
+              </label>
+            </div>
+            <div class="feedback-msg mt-2 hidden text-sm font-semibold"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex justify-center items-center pt-4 pb-12">
+        <button type="button" onclick="resetForm()" class="w-full sm:w-auto px-8 py-3 bg-gray-600 hover:bg-gray-700 text-white font-bold rounded-lg shadow-md transition">
+          Reset All Answers
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    function handleAnswer(selectedInput) {
+      const card = selectedInput.closest('.question-card');
+      const correctAnswer = card.getAttribute('data-correct');
+      const userValue = selectedInput.value;
+      const labels = card.querySelectorAll('label');
+      const feedbackMsg = card.querySelector('.feedback-msg');
+
+      // Reset styles for this card
+      labels.forEach(l => l.classList.remove('correct-answer', 'incorrect-answer'));
+
+      if (userValue === correctAnswer) {
+        selectedInput.closest('label').classList.add('correct-answer');
+        feedbackMsg.className = 'feedback-msg mt-2 text-sm font-semibold text-green-700 block';
+        feedbackMsg.innerHTML = '✓ Correct Answer!';
+      } else {
+        selectedInput.closest('label').classList.add('incorrect-answer');
+        
+        // Highlight the correct one so the user learns
+        labels.forEach(label => {
+          const inp = label.querySelector('input');
+          if (inp && inp.value === correctAnswer) {
+            label.classList.add('correct-answer');
+          }
+        });
+
+        feedbackMsg.className = 'feedback-msg mt-2 text-sm font-semibold text-red-700 block';
+        feedbackMsg.innerHTML = `✗ Incorrect. Correct option is (${correctAnswer.toUpperCase()}).`;
+      }
+
+      updateLiveStats();
+    }
+
+    function updateLiveStats() {
+      const cards = document.querySelectorAll('.question-card');
+      let answered = 0;
+      let correct = 0;
+
+      cards.forEach(card => {
+        const selected = card.querySelector('input[type="radio"]:checked');
+        if (selected) {
+          answered++;
+          if (selected.value === card.getAttribute('data-correct')) {
+            correct++;
+          }
+        }
+      });
+
+      document.getElementById('answeredCount').innerText = answered;
+      document.getElementById('correctCount').innerText = correct;
+    }
+
+    function resetForm() {
+      document.getElementById('quizForm').reset();
+      const labels = document.querySelectorAll('label');
+      labels.forEach(l => l.classList.remove('correct-answer', 'incorrect-answer'));
+      
+      const msgs = document.querySelectorAll('.feedback-msg');
+      msgs.forEach(m => {
+        m.className = 'feedback-msg mt-2 hidden text-sm font-semibold';
+        m.innerHTML = '';
+      });
+
+      updateLiveStats();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
